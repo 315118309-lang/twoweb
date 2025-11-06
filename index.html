@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>印刷版材成本对比分析系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">印刷版材成本对比分析系统</h1>
+        <p class="header__version">版本: 1.0.0</p>
+    </header>
+
+    <main class="main-content">
+        <section class="input-section">
+            <div class="input-section__column">
+                <h2 class="input-section__column-title">免冲洗版</h2>
+                <div class="input-group">
+                    <h3 class="input-group__title">材料成本</h3>
+                    <div class="input-item">
+                        <label for="fl-developer-price">显影液价格 (元/升):</label>
+                        <input type="number" id="fl-developer-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-developer-consumption">显影液单位面积消耗 (升/平米):</label>
+                        <input type="number" id="fl-developer-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-plate-price">版材价格 (元/平米):</label>
+                        <input type="number" id="fl-plate-price" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">设备成本</h3>
+                    <div class="input-item">
+                        <label for="fl-equipment-price">设备价格 (元):</label>
+                        <input type="number" id="fl-equipment-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-depreciation-years">折旧年限 (年):</label>
+                        <input type="number" id="fl-depreciation-years" min="1" value="5" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-power-consumption">设备功率 (千瓦):</label>
+                        <input type="number" id="fl-power-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-operating-time">设备运行时间 (小时/月):</label>
+                        <input type="number" id="fl-operating-time" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-electricity-price">电价 (元/千瓦时):</label>
+                        <input type="number" id="fl-electricity-price" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">人工成本</h3>
+                    <div class="input-item">
+                        <label for="fl-labor-salary">人员月工资 (元):</label>
+                        <input type="number" id="fl-labor-salary" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-work-days">月工作天数 (天):</label>
+                        <input type="number" id="fl-work-days" min="1" value="22" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-daily-hours">日工作时长 (小时):</label>
+                        <input type="number" id="fl-daily-hours" min="1" value="8" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">环境成本</h3>
+                    <div class="input-item">
+                        <label for="fl-wastewater-volume">废水产生量 (升/平米):</label>
+                        <input type="number" id="fl-wastewater-volume" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-wastewater-price">废水处理单价 (元/升):</label>
+                        <input type="number" id="fl-wastewater-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-water-consumption">清水消耗 (升/平米):</label>
+                        <input type="number" id="fl-water-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="fl-water-price">清水单价 (元/升):</label>
+                        <input type="number" id="fl-water-price" min="0" value="0" required>
+                    </div>
+                </div>
+            </div>
+            <div class="input-section__column">
+                <h2 class="input-section__column-title">传统冲洗版</h2>
+                <div class="input-group">
+                    <h3 class="input-group__title">材料成本</h3>
+                    <div class="input-item">
+                        <label for="tr-developer-price">显影液价格 (元/升):</label>
+                        <input type="number" id="tr-developer-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-developer-consumption">显影液单位面积消耗 (升/平米):</label>
+                        <input type="number" id="tr-developer-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-plate-price">版材价格 (元/平米):</label>
+                        <input type="number" id="tr-plate-price" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">设备成本</h3>
+                    <div class="input-item">
+                        <label for="tr-equipment-price">设备价格 (元):</label>
+                        <input type="number" id="tr-equipment-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-depreciation-years">折旧年限 (年):</label>
+                        <input type="number" id="tr-depreciation-years" min="1" value="5" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-power-consumption">设备功率 (千瓦):</label>
+                        <input type="number" id="tr-power-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-operating-time">设备运行时间 (小时/月):</label>
+                        <input type="number" id="tr-operating-time" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-electricity-price">电价 (元/千瓦时):</label>
+                        <input type="number" id="tr-electricity-price" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">人工成本</h3>
+                    <div class="input-item">
+                        <label for="tr-labor-salary">人员月工资 (元):</label>
+                        <input type="number" id="tr-labor-salary" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-work-days">月工作天数 (天):</label>
+                        <input type="number" id="tr-work-days" min="1" value="22" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-daily-hours">日工作时长 (小时):</label>
+                        <input type="number" id="tr-daily-hours" min="1" value="8" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="input-group__title">环境成本</h3>
+                    <div class="input-item">
+                        <label for="tr-wastewater-volume">废水产生量 (升/平米):</label>
+                        <input type="number" id="tr-wastewater-volume" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-wastewater-price">废水处理单价 (元/升):</label>
+                        <input type="number" id="tr-wastewater-price" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-water-consumption">清水消耗 (升/平米):</label>
+                        <input type="number" id="tr-water-consumption" min="0" value="0" required>
+                    </div>
+                    <div class="input-item">
+                        <label for="tr-water-price">清水单价 (元/升):</label>
+                        <input type="number" id="tr-water-price" min="0" value="0" required>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="action-buttons">
+            <button id="calculate-btn" class="btn btn--primary">计算成本</button>
+        </div>
+
+        <section class="results-section">
+            <h2 class="results-section__title">分析结果</h2>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>成本项</th>
+                            <th>免冲洗版</th>
+                            <th>传统冲洗版</th>
+                            <th>差异</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 动态生成对比表格内容 -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-item">
+                    <h3>总成本对比</h3>
+                    <canvas id="totalCostChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h3>免冲洗版成本构成</h3>
+                    <canvas id="flCostCompositionChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h3>传统冲洗版成本构成</h3>
+                    <canvas id="trCostCompositionChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <h3>单位成本趋势</h3>
+                    <canvas id="unitCostTrendChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
